@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "2ECME/EtFglQyRFWu0xk8ElWDO9ojWkQLvxMk8dfRQFlJWRTeOe9RTOo44LwPm8j2Vaw04DVghNzKjhrhh2gMQ==",
+  "success": true,
+  "projectFilePath": "/Users/michaelblevins/Desktop/Holberton/holbertonschool-csharp/csharp-hello_world/3-writeline/3-writeline.csproj",
+  "expectedPackageFiles": [
+    "/Users/michaelblevins/.nuget/packages/microsoft.netcore.app/2.1.0/microsoft.netcore.app.2.1.0.nupkg.sha512",
+    "/Users/michaelblevins/.nuget/packages/microsoft.netcore.dotnetapphost/2.1.0/microsoft.netcore.dotnetapphost.2.1.0.nupkg.sha512",
+    "/Users/michaelblevins/.nuget/packages/microsoft.netcore.dotnethostpolicy/2.1.0/microsoft.netcore.dotnethostpolicy.2.1.0.nupkg.sha512",
+    "/Users/michaelblevins/.nuget/packages/microsoft.netcore.dotnethostresolver/2.1.0/microsoft.netcore.dotnethostresolver.2.1.0.nupkg.sha512",
+    "/Users/michaelblevins/.nuget/packages/microsoft.netcore.platforms/2.1.0/microsoft.netcore.platforms.2.1.0.nupkg.sha512",
+    "/Users/michaelblevins/.nuget/packages/microsoft.netcore.targets/2.1.0/microsoft.netcore.targets.2.1.0.nupkg.sha512",
+    "/Users/michaelblevins/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
