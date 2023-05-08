@@ -19,5 +19,6 @@ class Program
         {
             Console.Write(" is negative");
         }
+        Console.WriteLine();
     }
 }
