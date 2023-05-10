@@ -3,24 +3,21 @@ using System.Collections.Generic;
 
 class List
 {
-    public static List<int> DeleteAt(List<int> myList, int index)
+    public static int MaxInteger(List<int> myList)
+{
+    if (myList.Count == 0)
     {
-        if (index < 0 || index >= myList.Count)
-        {
-            Console.WriteLine("Index is out of range");
-            return myList;
-        }
-
-        List<int> updatedList = new List<int>();
-
-        for (int i = 0; i < myList.Count; i++)
-        {
-            if (i != index)
-            {
-                updatedList.Add(myList[i]);
-            }
-        }
-
-        return updatedList;
+        Console.WriteLine("List is empty");
+        return -1;
     }
+
+    int max = myList[0];
+    for (int i = 1; i < myList.Count; i++)
+    {
+        if (myList[i] > max)
+            max = myList[i];
+    }
+    return max;
+}
+
 }
