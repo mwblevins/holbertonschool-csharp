@@ -4,9 +4,10 @@ class Array
 {
     public static void Reverse(int[] array)
     {
-        for (int i = array.Length - 1; i >= 0; i--)
+        for (int i = x - 1; i != -1; i--)
         {
-            Console.Write(array[i] + " ");
+            int x = (array?.Length).GetValueOrDefault(0);
+            Console.Write("{0}{1}", array[i], i == 0 ? "" : " ");
         }
         Console.WriteLine();
     }
