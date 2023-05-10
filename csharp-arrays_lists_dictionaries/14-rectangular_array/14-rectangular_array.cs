@@ -23,7 +23,11 @@ class Program
         {
             for (int j = 0; j < 5; j++)
             {
-                Console.Write("{0} ", array[i, j]);
+                Console.Write("{0}", array[i, j]);
+                if (j < 4)
+                {
+                    Console.Write(" ");
+                }
             }
             Console.WriteLine();
         }
