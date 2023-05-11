@@ -15,18 +15,3 @@ class LList
         return count;
     }
 }
-
-class Program
-{
-    static void Main(string[] args)
-    {
-        LinkedList<int> llist = new LinkedList<int>();
-        llist.AddLast(1);
-        llist.AddLast(2);
-        llist.AddLast(3);
-
-        int length = LList.Length(llist);
-
-        Console.WriteLine("Linked List Length: " + length);
-    }
-}
