@@ -1,25 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 
-public class MyStack
+class MyStack
 {
     public static Stack<string> Info(Stack<string> aStack, string newItem, string search)
     {
-        Console.WriteLine("Number of items: " + aStack.Count);
-        if (aStack.Count > 0)
-        {
-            Console.WriteLine("Top item: " + aStack.Peek());
-        }
-        else
+        int numItems = aStack.Count;
+        Console.WriteLine("Number of items: " + numItems);
+
+        if (numItems == 0)
         {
             Console.WriteLine("Stack is empty");
+            return aStack;
         }
-    bool containsSearch = false;
+
+        string topItem = aStack.Peek();
+        Console.WriteLine("Top item: " + topItem);
+
+        bool containsSearch = false;
         Stack<string> tempStack = new Stack<string>();
-        // Search for the item to remove
-        while (aStack.Count > 0)
+
+        foreach (string item in aStack)
         {
-            string item = aStack.Pop();
             if (item == search)
             {
                 containsSearch = true;
@@ -28,34 +30,22 @@ public class MyStack
             tempStack.Push(item);
         }
 
-        // Put the remaining items back on the stack
-        while (tempStack.Count > 0)
-        {
-            aStack.Push(tempStack.Pop());
-        }
-
-        // Add the new item to the stack
-        aStack.Push(newItem);
-
-        Console.WriteLine("Stack contains " + search + ": " + containsSearch);
+        Console.WriteLine("Stack contains \"" + search + "\": " + containsSearch);
 
         if (containsSearch)
         {
-            // Remove the item and all items above it
-            tempStack = new Stack<string>();
+            aStack = new Stack<string>();
 
-            while (aStack.Peek() != search)
-            {
-                tempStack.Push(aStack.Pop());
-            }
-
-            aStack.Pop(); // Remove the search item
-
-            // Put the remaining items back on the stack
             while (tempStack.Count > 0)
             {
                 aStack.Push(tempStack.Pop());
             }
+
+            aStack.Push(newItem);
+        }
+        else
+        {
+            aStack.Push(newItem);
         }
 
         return aStack;
