@@ -6,7 +6,6 @@ public class MyStack
     public static Stack<string> Info(Stack<string> aStack, string newItem, string search)
     {
         Console.WriteLine("Number of items: " + aStack.Count);
-
         if (aStack.Count > 0)
         {
             Console.WriteLine("Top item: " + aStack.Peek());
@@ -15,10 +14,8 @@ public class MyStack
         {
             Console.WriteLine("Stack is empty");
         }
-
-        bool containsSearch = false;
+    bool containsSearch = false;
         Stack<string> tempStack = new Stack<string>();
-
         // Search for the item to remove
         while (aStack.Count > 0)
         {
