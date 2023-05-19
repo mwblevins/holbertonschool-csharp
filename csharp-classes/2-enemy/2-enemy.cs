@@ -22,6 +22,7 @@ namespace Enemies
         }
             /// <summary>
             /// Health must be greater than 0 or dead
+            /// @value - a new variable for health...i think, not really sure 
             /// </summary>
         public Zombie(int value)
         {
@@ -29,6 +30,7 @@ namespace Enemies
             {
                 throw new ArgumentException("Health must be greater than or equal to 0");
             }
+            health = value;
         }
 
     }
