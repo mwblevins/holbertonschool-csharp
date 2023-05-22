@@ -2,7 +2,7 @@
 namespace MyMath
 {
     /// <summary>
-    /// Task 2 
+    /// Task 2 idk whats wrong 
     /// </summary>
     public class Operations
     {
