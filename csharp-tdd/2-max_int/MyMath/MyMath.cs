@@ -1,5 +1,4 @@
 ﻿using System;
-
 namespace MyMath
 {
     /// <summary>
@@ -8,7 +7,7 @@ namespace MyMath
     public class Operations
     {
         /// <summary>
-        /// Max number in list 
+        /// Max number in list, idk how much i need for it to pass or where to put it.
         /// </summary>
         /// <param name="nums"></param>
         /// <returns>max</returns>
