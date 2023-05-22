@@ -8,7 +8,7 @@ namespace MyMath
     public class Operations
     {
         ///  <summary>
-        /// Add two ints
+        /// Add two ints have to make a change for commit
         /// </summary>
         /// <param name="a"></param>
         /// <param name="b"></param>
