@@ -11,6 +11,6 @@ public class Tests
     public void Test1()
     {
         Assert.Pass();
-        Console.WriteLine("Test Run Successful.")
+        Console.WriteLine("Test Run Successful.");
     }
 }
