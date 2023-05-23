@@ -1,52 +1,42 @@
 using NUnit.Framework;
-using MyMath;
 
 namespace MyMath.Tests
 {
     [TestFixture]
+    /// <summary>Tests Alz</summary>
     public class MatrixTests
     {
         [Test]
-        public void Divide_MatrixIsNull_ReturnsNull()
+        public void positivetwo()
         {
-            // Arrange
+            int[,] matrix = new int[,] {{ 30, 40 }, { 5, 11 }, { 15, 6 }, { 7, 8 }};
+            int n = 2;
+
+            int[,] result = Matrix.Divide(matrix, n);
+
+            Assert.AreEqual(new int[,] {{ 15, 20 }, { 2, 5 }, { 7, 3 }, { 3, 4 }}, result);
+        }
+
+        [Test]
+        public void zero()
+        {
+            int[,] matrix = new int[,] {{ 30, 40 }, { 5, 11 }, { 15, 6 }, { 7, 8 }};
+            int n = 0;
+
+            int[,] result = Matrix.Divide(matrix, n);
+
+            Assert.AreEqual(null, result);
+        }
+        
+        [Test]
+        public void snull()
+        {
             int[,] matrix = null;
-            int num = 5;
+            int n = 3;
 
-            // Act
-            int[,] result = Matrix.Divide(matrix, num);
+            int[,] result = Matrix.Divide(matrix, n);
 
-            // Assert
-            Assert.IsNull(result);
-        }
-
-        [Test]
-        public void Divide_DivisorIsZero_ReturnsNull()
-        {
-            // Arrange
-            int[,] matrix = new int[,] { { 1, 2 }, { 3, 4 } };
-            int num = 0;
-
-            // Act
-            int[,] result = Matrix.Divide(matrix, num);
-
-            // Assert
-            Assert.IsNull(result);
-        }
-
-        [Test]
-        public void Divide_DivisorIsPositive_ReturnsCorrectResult()
-        {
-            // Arrange
-            int[,] matrix = new int[,] { { 4, 8 }, { 12, 16 } };
-            int num = 2;
-            int[,] expected = new int[,] { { 2, 4 }, { 6, 8 } };
-
-            // Act
-            int[,] result = Matrix.Divide(matrix, num);
-
-            // Assert
-            Assert.AreEqual(expected, result);
+            Assert.AreEqual(null, result);
         }
     }
 }
