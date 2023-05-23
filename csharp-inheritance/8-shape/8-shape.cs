@@ -29,7 +29,7 @@ public class Rectangle : Shape
         {
             if (value < 0)
             {
-                throw new ArgumentException("Width must be greater than or equal to 0.");
+                throw new ArgumentException("Width must be greater than or equal to 0");
             }
             width = value;
         }
@@ -44,7 +44,7 @@ public class Rectangle : Shape
         {
             if (value < 0)
             {
-                throw new ArgumentException("Height must be greater than or equal to 0.");
+                throw new ArgumentException("Height must be greater than or equal to 0");
             }
             height = value;
         }
@@ -80,7 +80,7 @@ public class Square : Rectangle
         {
             if (value < 0)
             {
-                throw new ArgumentException("Size must be greater than or equal to 0.");
+                throw new ArgumentException("Size must be greater than or equal to 0");
             }
             size = value;
             Width = value;
