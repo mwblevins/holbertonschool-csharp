@@ -1,12 +1,92 @@
 ﻿using System;
 
-namespace _2_validation
+/// <summary>
+/// Player class represents a player in a game.
+/// </summary>
+public class Player
 {
-    class Program
+    /// <summary>
+    /// Player name.
+    /// </summary>
+    protected string name;
+
+    /// <summary>
+    /// Player maximum health points (hp).
+    /// </summary>
+    protected float maxHp;
+
+    /// <summary>
+    /// Player current health points (hp).
+    /// </summary>
+    protected float hp;
+
+    // Define the delegate
+    public delegate void CalculateHealth(float amount);
+
+    /// <summary>
+    /// Constructs a new instance of the Player class with the specified name and maximum health points.
+    /// </summary>
+    /// <param name="name">Player name.</param>
+    /// <param name="maxHp">Maximum health points.</param>
+    public Player(string name = "Player", float maxHp = 100f)
     {
-        static void Main(string[] args)
+        this.name = name;
+        if (maxHp <= 0f)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("maxHp must be greater than 0. maxHp set to 100f by default.");
+            maxHp = 100f;
         }
+        this.maxHp = maxHp;
+        this.hp = this.maxHp;
+    }
+
+    /// <summary>
+    /// Prints the player's current health information.
+    /// </summary>
+    public void PrintHealth()
+    {
+        Console.WriteLine("{0} has {1} / {2} health", name, hp, maxHp);
+    }
+
+    /// <summary>
+    /// Takes damage from the player.
+    /// </summary>
+    /// <param name="damage">Amount of damage to be taken.</param>
+    public void TakeDamage(float damage)
+    {
+        if (damage < 0f)
+            damage = 0f;
+
+        Console.WriteLine("{0} takes {1} damage!", name, damage);
+        float newHp = hp - damage;
+        ValidateHP(newHp);
+    }
+
+    /// <summary>
+    /// Heals the player.
+    /// </summary>
+    /// <param name="heal">Amount of health to be healed.</param>
+    public void HealDamage(float heal)
+    {
+        if (heal < 0f)
+            heal = 0f;
+
+        Console.WriteLine("{0} heals {1} HP!", name, heal);
+        float newHp = hp + heal;
+        ValidateHP(newHp);
+    }
+
+    /// <summary>
+    /// Validates and sets the new value of the player's health points (hp).
+    /// </summary>
+    /// <param name="newHp">New health points value.</param>
+    public void ValidateHP(float newHp)
+    {
+        if (newHp < 0f)
+            hp = 0f;
+        else if (newHp > maxHp)
+            hp = maxHp;
+        else
+            hp = newHp;
     }
 }
