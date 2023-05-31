@@ -1,85 +1,80 @@
 ﻿using System;
 
 /// <summary>
-/// Represents a player with a name, maximum health, current health, and health calculation methods.
+/// Player class represents a player in a game.
 /// </summary>
 public class Player
 {
-    private string name;
-    private float maxHp;
-    private float hp;
+    /// <summary>
+    /// Player name.
+    /// </summary>
+    protected string name;
 
     /// <summary>
-    /// Initializes a new instance of the Player class with the specified name and maximum health.
+    /// Player maximum health points (hp).
     /// </summary>
-    /// <param name="name">The name of the player.</param>
-    /// <param name="maxHp">The maximum health of the player.</param>
-    public Player(string name, float maxHp)
+    protected float maxHp;
+
+    /// <summary>
+    /// Player current health points (hp).
+    /// </summary>
+    protected float hp;
+
+    // Define the delegate
+    public delegate void CalculateHealth(float amount);
+
+    /// <summary>
+    /// Constructs a new instance of the Player class with the specified name and maximum health points.
+    /// </summary>
+    /// <param name="name">Player name.</param>
+    /// <param name="maxHp">Maximum health points.</param>
+    public Player(string name = "Player", float maxHp = 100f)
     {
         this.name = name;
-        if (maxHp > 0)
+        if (maxHp <= 0f)
         {
-            this.maxHp = maxHp;
-        }
-        else
-        {
-            this.maxHp = 100f;
             Console.WriteLine("maxHp must be greater than 0. maxHp set to 100f by default.");
+            maxHp = 100f;
         }
+        this.maxHp = maxHp;
         this.hp = this.maxHp;
     }
 
     /// <summary>
-    /// Prints the current health of the player.
+    /// Prints the player's current health information.
     /// </summary>
     public void PrintHealth()
     {
-        Console.WriteLine($"{name} has {hp} / {maxHp} health");
+        Console.WriteLine("{0} has {1} / {2} health", name, hp, maxHp);
     }
 
     /// <summary>
-    /// Delegate for calculating health.
+    /// Takes damage from the player.
     /// </summary>
-    /// <param name="amount">The amount to be calculated.</param>
-    public delegate void CalculateHealth(float amount);
-
-    /// <summary>
-    /// Takes damage and reduces the player's health accordingly.
-    /// </summary>
-    /// <param name="damage">The amount of damage to be taken.</param>
+    /// <param name="damage">Amount of damage to be taken.</param>
     public void TakeDamage(float damage)
     {
-        if (damage < 0)
-        {
-            damage = 0;
-        }
+        if (damage < 0f)
+            damage = 0f;
 
-        Console.WriteLine($"{name} takes {damage} damage!");
+        Console.WriteLine("{0} takes {1} damage!", name, damage);
         hp -= damage;
-
-        if (hp < 0)
-        {
-            hp = 0;
-        }
+        if (hp < 0f)
+            hp = 0f;
     }
 
     /// <summary>
-    /// Heals the player and increases their health accordingly.
+    /// Heals the player.
     /// </summary>
-    /// <param name="heal">The amount of HP to be healed.</param>
+    /// <param name="heal">Amount of health to be healed.</param>
     public void HealDamage(float heal)
     {
-        if (heal < 0)
-        {
-            heal = 0;
-        }
+        if (heal < 0f)
+            heal = 0f;
 
-        Console.WriteLine($"{name} heals {heal} HP!");
+        Console.WriteLine("{0} heals {1} HP!", name, heal);
         hp += heal;
-
         if (hp > maxHp)
-        {
             hp = maxHp;
-        }
     }
 }
