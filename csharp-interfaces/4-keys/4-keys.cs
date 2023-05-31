@@ -1,12 +1,23 @@
 ﻿using System;
 
-namespace _4_keys
+class Key : Base, ICollectable
 {
-    class Program
+    public bool isCollected { get; set; }
+
+    public Key(string name = "Key", bool iscollected = false)
     {
-        static void Main(string[] args)
+        this.name = name;
+        this.isCollected = isCollected;
+    }
+
+    public void Collect()
+    {
+        if (this.isCollected == false)
         {
-            Console.WriteLine("Hello World!");
+            this.isCollected = true;
+            Console.WriteLine("You pick up the {0}.", this.name);
         }
+        else
+            Console.WriteLine("You have already picked up the {0}.", this.name);
     }
 }
