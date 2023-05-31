@@ -1,12 +1,29 @@
 ﻿using System;
+using System.Collections.Generic;
 
-namespace _5_iterate_act
+/// <summary> RoomObject class </summary>
+public class RoomObjects
 {
-    class Program
+    enum myType
     {
-        static void Main(string[] args)
+        Interactive,
+        Breakable,
+        Collectable
+    }
+
+    /// <summary> InteractAction method </summary>
+    public static void IterateAction(List<Base> roomObjects, Type type)
+    {
+        foreach(Base obj in roomObjects)
         {
-            Console.WriteLine("Hello World!");
+            if (type.IsInstanceOfType(obj))
+                if (type == typeof(IInteractive))
+                    ((IInteractive)obj).Interact();
+                else if (type == typeof(IBreakable))
+                    ((IBreakable)obj).Break();
+                else if (type == typeof(ICollectable))
+                    ((ICollectable)obj).Collect();
         }
+
     }
 }
