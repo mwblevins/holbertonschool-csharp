@@ -20,7 +20,10 @@ public class Player
     /// </summary>
     protected float hp;
 
-    // Define the delegate
+    /// <summary>
+    /// calculate health
+    /// </summary>
+    /// <param name="amount"></param>
     public delegate void CalculateHealth(float amount);
 
     /// <summary>
