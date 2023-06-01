@@ -5,7 +5,7 @@ using System.Text.Json;
 
 public class JSONStorage
 {
-    private Dictionary<string, object> objects;
+    public Dictionary<string, object> objects;
     private string filePath;
 
     public JSONStorage()
