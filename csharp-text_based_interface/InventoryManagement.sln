@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryLibrary", "InventoryLibrary\InventoryLibrary.csproj", "{C56C0923-D5F3-41FE-B9C4-C496D4D8CE87}"
 EndProject
-Project("/Users/michaelblevins/Desktop/Holberton/holbertonschool-csharp/csharp-text_based_interface/InventoryManager") = "InventoryManager", "/Users/michaelblevins/Desktop/Holberton/holbertonschool-csharp/csharp-text_based_interface/InventoryManager/InventoryManager.csproj", "{998aaccd-2e18-4b57-ae4d-319f343eab4f}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryManager", "InventoryManager\InventoryManager.csproj", "{329CA591-9BD7-4D73-9359-5D8F5D58E91C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,5 +32,17 @@ Global
 		{C56C0923-D5F3-41FE-B9C4-C496D4D8CE87}.Release|x64.Build.0 = Release|Any CPU
 		{C56C0923-D5F3-41FE-B9C4-C496D4D8CE87}.Release|x86.ActiveCfg = Release|Any CPU
 		{C56C0923-D5F3-41FE-B9C4-C496D4D8CE87}.Release|x86.Build.0 = Release|Any CPU
+		{329CA591-9BD7-4D73-9359-5D8F5D58E91C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{329CA591-9BD7-4D73-9359-5D8F5D58E91C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{329CA591-9BD7-4D73-9359-5D8F5D58E91C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{329CA591-9BD7-4D73-9359-5D8F5D58E91C}.Debug|x64.Build.0 = Debug|Any CPU
+		{329CA591-9BD7-4D73-9359-5D8F5D58E91C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{329CA591-9BD7-4D73-9359-5D8F5D58E91C}.Debug|x86.Build.0 = Debug|Any CPU
+		{329CA591-9BD7-4D73-9359-5D8F5D58E91C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{329CA591-9BD7-4D73-9359-5D8F5D58E91C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{329CA591-9BD7-4D73-9359-5D8F5D58E91C}.Release|x64.ActiveCfg = Release|Any CPU
+		{329CA591-9BD7-4D73-9359-5D8F5D58E91C}.Release|x64.Build.0 = Release|Any CPU
+		{329CA591-9BD7-4D73-9359-5D8F5D58E91C}.Release|x86.ActiveCfg = Release|Any CPU
+		{329CA591-9BD7-4D73-9359-5D8F5D58E91C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
