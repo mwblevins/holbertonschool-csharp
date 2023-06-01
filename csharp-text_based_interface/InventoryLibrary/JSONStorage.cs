@@ -1,41 +1,49 @@
 using System;
-using System.IO;
 using System.Collections.Generic;
+using System.IO;
 using System.Text.Json;
 
-namespace InventoryLibrary
+public class JSONStorage
 {
-    public class JSONStorage
+    private Dictionary<string, object> objects;
+    private string filePath;
+
+    public JSONStorage()
     {
+        objects = new Dictionary<string, object>();
+        filePath = Path.Combine("storage", "inventory_manager.json");
+    }
 
-        Dictionary<string, BaseClass> objects = new Dictionary<string, BaseClass>();
-        
-        public Dictionary<string, BaseClass> All()
+    public Dictionary<string, object> All()
+    {
+        return objects;
+    }
+
+    public void New(object obj)
+    {
+        string key = $"{obj.GetType().Name}.{obj.GetHashCode()}";
+        objects[key] = obj;
+    }
+
+    public void Save()
+    {
+        string json = JsonSerializer.Serialize(objects);
+        Directory.CreateDirectory("storage");
+        File.WriteAllText(filePath, json);
+        Console.WriteLine("Objects saved to JSON file.");
+    }
+
+    public void Load()
+    {
+        if (File.Exists(filePath))
         {
-            return objects;
+            string json = File.ReadAllText(filePath);
+            objects = JsonSerializer.Deserialize<Dictionary<string, object>>(json);
+            Console.WriteLine("Objects loaded from JSON file.");
         }
-
-        ///
-        public void New(BaseClass obj)
+        else
         {
-            string key = String.Format("{}.{}", obj.GetType().Name, obj.id);
-            objects.Add(key, obj);
-        }
-
-        ///
-        public void Save()
-        {
-            string jsonString ="";// JsonSerializer.Serialize(objects);
-            try
-            {
-                File.WriteAllText("inventory_manager.json", jsonString);
-            }
-            catch (Exception)
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Error: Unable to save to file.");
-                Console.ResetColor();
-            }
+            Console.WriteLine("JSON file does not exist. No objects loaded.");
         }
     }
 }
